@@ -72,6 +72,13 @@ a {
   display: block;
 }
 
+button {
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+}
+
 /* 設計稿字型 class 設定 */
 /* heading-lg 以下沿用 body 的 line-height: 1.5 */
 /* ----------- */
@@ -760,4 +767,18 @@ a {
 
 ol, ul {
     list-style: none;
+}
+
+@media  (max-width: 575px)  {
+  .d-md-block {
+	display: block;
+  }
+
+  .d-md-none {
+	display: none;
+	}
+
+	.w-md-full {
+  width: 100%;
+}
 }

@@ -26,18 +26,29 @@
 			</div>
 		</div>
 	</nav> -->
-    
+
+    <!-- 頁首區域 -->
 	<head class="bg-primary-50">
 		<nav>
 			<div class="container">
 				<div class="d-flex py-12  align-items-center">
-					<a href="#"><img src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/0163848842b749c38a767e05caabbbd18d2f6dc9/2026-web-camp/device-pc.svg" alt="logo"></a>
-
-						<ul class="ml-auto d-flex label-md text-neutral-700 gap-24">
-							<li><a class="d-block px-12 py-4" href="#">服務項目</a></li>
-							<li><a class="d-block px-12 py-4" href="#">專案作品</a></li>
-							<li><a class="d-block px-12 py-4" href="#">部落格</a></li>
-							<li><a class="d-block px-12 py-4" href="#">與我聯絡</a></li>
+					<!-- 網站logo -->
+					<a class="logo" href="#">
+					<picture>
+						<source srcset="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/456698ad0b642710162489555e98fd3b15eb49ff/2026-web-camp/device-mobile.svg" media="(max-width: 575px)" />
+						<img src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/456698ad0b642710162489555e98fd3b15eb49ff/2026-web-camp/device-pc.svg" alt="" />
+					</picture>
+					</a>
+					<!-- 手機版(漢堡按鈕) -->
+					<button class="menu-button d-none d-md-block ml-auto p-12" type="button">
+						<span class="material-symbols-outlined">dehaze</span>
+					</button>
+						<!-- nav(選單) -->
+						<ul class="nav-list label-mobile-sm d-md-none ml-auto d-flex label-md text-neutral-700 gap-24">
+							<li class="w-md-full"><a class="d-block px-12 py-4" href="#">服務項目</a></li>
+							<li class="w-md-full"><a class="d-block px-12 py-4" href="#">專案作品</a></li>
+							<li class="w-md-full"><a class="d-block px-12 py-4" href="#">部落格</a></li>
+							<li class="w-md-full"><a class="d-block px-12 py-4" href="#">與我聯絡</a></li>
 						</ul>
 				</div>
 			</div>
@@ -45,6 +56,7 @@
 		</nav>
 	</head>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> -->
   </body>
 </html>
