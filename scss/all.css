@@ -118,11 +118,15 @@ a {
   display: block;
 }
 
-button {
+input, textarea, button {
   font: inherit;
   color: inherit;
   background-color: transparent;
   border: none;
+}
+
+textarea {
+  resize: none;
 }
 
 /* 設計稿字型 class 設定 */
@@ -143,7 +147,7 @@ button {
 
 /* Heading - font-weight: 700 */
 .heading-xxxl {
-  font-size: clamp(2.5rem, 1.893rem + 2.589vw, 5rem);
+  font-size: 80px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -265,6 +269,10 @@ button {
   flex-wrap: wrap;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -305,8 +313,20 @@ button {
   margin-right: 4px;
 }
 
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
 .mb-4 {
   margin-bottom: 4px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
 }
 
 .mb-12 {
@@ -321,20 +341,12 @@ button {
   margin-bottom: 40px;
 }
 
-.mb-92 {
-  margin-bottom: 92px;
-}
-
-.mr-12 {
-  margin-right: 12px;
-}
-
-.mr-24 {
-  margin-right: 24px;
-}
-
 .mb-60 {
   margin-bottom: 60px;
+}
+
+.mb-92 {
+  margin-bottom: 92px;
 }
 
 .pb-4 {
@@ -367,6 +379,11 @@ button {
   padding-bottom: 12px;
 }
 
+.py-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .py-20 {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -387,9 +404,19 @@ button {
   padding-right: 12px;
 }
 
+.px-16 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 .px-24 {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.px-32 {
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .px-40 {
@@ -427,10 +454,6 @@ button {
 
 .bg-neutral-700 {
   background-color: var(--color-neutral-700);
-}
-
-.bg-primary-900 {
-  background-color: var(--color-primary-900);
 }
 
 .bg-primary-50 {
@@ -596,6 +619,77 @@ button {
   width: calc((100% - var(--gutter) * (var(--column) - 1)) / var(--column) * var(--span) + var(--gutter) * var(--gap-count));
 }
 
+.contact-input-half {
+  --gap: 24px;
+  width: calc((100% - var(--gap)) / 2);
+}
+
+ol, ul {
+  list-style: none;
+}
+
+.hero {
+  min-height: calc(100vh - 64px);
+}
+
+@media (max-width: 992px) {
+  .hero {
+    min-height: calc(100vh - 68px);
+  }
+  .d-md-block {
+    display: block;
+  }
+  .d-md-none {
+    display: none;
+  }
+  .w-md-full {
+    width: 100%;
+  }
+  .order-md-1 {
+    order: 1;
+  }
+  .order-md-2 {
+    order: 2;
+  }
+  .heading-mobile-xl {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .paragraph-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mb-md-12 {
+    margin-bottom: 12px;
+  }
+  .mb-md-24 {
+    margin-bottom: 24px;
+  }
+  .mb-md-32 {
+    margin-bottom: 32px;
+  }
+  .py-md-24 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .label-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* 想要的外框寬度 */
+  height: 48px; /* 與寬度相同 -> 圓形 */
+  padding: 0; /* 移除原先的 p-12 內距（或覆寫之） */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 1px solid currentColor; /* 如需保留 btn-outline 效果，可移除 */
+}
+
 @media (max-width: 992px) {
   .d-mb-block {
     display: block;
@@ -643,6 +737,10 @@ button {
     padding-left: 16px;
     padding-right: 16px;
   }
+  .py-md-8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
   .py-md-16 {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -674,6 +772,9 @@ button {
   }
   .flex-md-col {
     flex-direction: column;
+  }
+  .align-items-md-end {
+    align-items: flex-end;
   }
   .d-md-block {
     display: block;
@@ -748,27 +849,23 @@ button {
   .mr-md-8 {
     margin-right: 8px;
   }
-}
-ol, ul {
-  list-style: none;
-}
-
-@media (max-width: 575px) {
-  .d-md-block {
-    display: block;
-  }
-  .d-md-none {
-    display: none;
-  }
-  .w-md-full {
-    width: 100%;
+  .icon-mobile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px; /* 想要的外框寬度 */
+    height: 44px; /* 與寬度相同 -> 圓形 */
+    padding: 0; /* 移除原先的 p-12 內距（或覆寫之） */
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid currentColor; /* 如需保留 btn-outline 效果，可移除 */
   }
 }
 .nav-list {
   display: flex;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 992px) {
   .nav-list {
     display: none;
   }
@@ -787,5 +884,94 @@ ol, ul {
   .label-mobile-sm {
     font-size: 14px;
     font-weight: 500;
+  }
+  body.menu-open {
+    overflow: hidden;
+  }
+  body.menu-open .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark-60a);
+  }
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  content: " > ";
+  margin: 0 8px;
+}
+
+.title-breadcrumb-item + .title-breadcrumb-item::before {
+  content: " · ";
+  margin: 0 8px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.table-responsive::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.table th,
+.table td {
+  padding: 12px 24px;
+  border: 1px solid var(--color-primary-900);
+  text-align: left;
+  width: 25%;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.table thead th {
+  background-color: var(--color-primary-900);
+  color: var(--color-neutral-0);
+}
+
+@media (max-width: 992px) {
+  .label-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .paragraph-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .heading-mobile-md {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .heading-mobile-sm {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .heading-mobile-xxs {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .heading-mobile-xxxs {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .heading-mobile-xxxxs {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .paragraph-mobile-sm {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mb-md-20 {
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=all.css.map */
