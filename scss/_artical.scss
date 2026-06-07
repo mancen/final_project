@@ -63,6 +63,11 @@
     font-weight: 700;
   }
 
+  .heading-mobile-xs {
+  font-size: 20px;
+  font-weight: 700;
+}
+
   .heading-mobile-xxs{
     font-size: 18px;
     font-weight: 700;
@@ -83,8 +88,22 @@
     font-weight: 500;
   }
 
+  .paragraph-mobile-xs {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+  .mb-md-8 {
+    margin-bottom: 8px;  
+  }
+
   .mb-md-20 {
     margin-bottom: 20px;  
   }
+
+  .mb-md-24{
+    margin-bottom: 24px;
+  }
+
 
 }
